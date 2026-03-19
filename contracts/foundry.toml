@@ -1,0 +1,11 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.24"
+
+[rpc_endpoints]
+somnia_testnet = "https://dream-rpc.somnia.network"
+
+[etherscan]
+somnia_testnet = { key = "${ETHERSCAN_API_KEY}", chain = 50312, url = "https://explorer.somnia.network/api" }
