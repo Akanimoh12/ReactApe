@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+/* ── Global ─────────────────────────────────────── */
+html,
+body {
+  @apply bg-black text-white font-mono;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #333333 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+/* ── CRT Scanline Overlay ────────────────────────── */
+.scanline-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  z-index: 20;
+}
+
+/* ── Risograph Halftone Texture ──────────────────── */
+.riso-texture {
+  position: relative;
+}
+.riso-texture::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  z-index: 10;
+}
+
+/* ── Neon Glow Border ────────────────────────────── */
+.neon-border {
+  border: 2px solid #beff00;
+  box-shadow: 0 0 8px #beff00, 0 0 20px #beff0044, inset 0 0 8px #beff0022;
+}
+
+/* ── Torn Paper Edge Effect ──────────────────────── */
+.torn-paper {
+  clip-path: polygon(
+    0% 2%, 3% 0%, 8% 1%, 15% 0%, 22% 2%, 30% 0%,
+    38% 1%, 45% 0%, 52% 2%, 60% 0%, 68% 1%, 75% 0%,
+    82% 2%, 90% 0%, 95% 1%, 100% 0%,
+    100% 98%, 97% 100%, 92% 99%, 85% 100%, 78% 98%,
+    70% 100%, 62% 99%, 55% 100%, 48% 98%, 40% 100%,
+    32% 99%, 25% 100%, 18% 98%, 10% 100%, 5% 99%, 0% 100%
+  );
+}
+
+/* ── Red flash on bomb click ─────────────────────── */
+.bomb-flash {
+  animation: bombFlash 0.3s ease-out;
+}
+@keyframes bombFlash {
+  0% { background-color: rgba(204, 34, 0, 0.5); }
+  100% { background-color: transparent; }
+}
+
+/* ── Confetti Particles ──────────────────────────── */
+.confetti-container {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  animation: confettiFall 2s ease-out forwards;
+}
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ── Particle Burst on APE Click ─────────────────── */
+.particle-burst {
+  position: absolute;
+  pointer-events: none;
+}
+.particle-burst span {
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #beff00;
+  animation: particleBurst 0.4s ease-out forwards;
+}
+@keyframes particleBurst {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { opacity: 0; }
+}
+.particle-burst span:nth-child(1) { animation-name: pb1; }
+.particle-burst span:nth-child(2) { animation-name: pb2; }
+.particle-burst span:nth-child(3) { animation-name: pb3; }
+.particle-burst span:nth-child(4) { animation-name: pb4; }
+.particle-burst span:nth-child(5) { animation-name: pb5; }
+.particle-burst span:nth-child(6) { animation-name: pb6; }
+
+@keyframes pb1 { 100% { transform: translate(-20px, -25px); opacity: 0; } }
+@keyframes pb2 { 100% { transform: translate(20px, -25px); opacity: 0; } }
+@keyframes pb3 { 100% { transform: translate(-25px, 10px); opacity: 0; } }
+@keyframes pb4 { 100% { transform: translate(25px, 10px); opacity: 0; } }
+@keyframes pb5 { 100% { transform: translate(0px, -30px); opacity: 0; } }
+@keyframes pb6 { 100% { transform: translate(0px, 30px); opacity: 0; } }
+
+/* ── Misregistration Offset Effect ───────────────── */
+.misregister {
+  text-shadow: 2px 1px #ff6b00, -1px -1px #beff00;
+}
