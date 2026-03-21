@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://react-ape.vercel.app/"><strong>🌐 Play the Game (Live)</strong></a> ·
-  <a href="https://youtube.com"><strong>🎬 Watch the Demo Video</strong></a>
+  <a href="https://www.loom.com/share/7fa87ab3fdba4d998eeb65e9673a22f5"><strong>🎬 Watch the Demo Video</strong></a>
 </p>
 
 ---
@@ -26,7 +26,7 @@ Instead of obsessively polling the blockchain for leaderboard changes, the React
 
 ## Smart Contract Details
 - **Network:** Somnia Testnet (50312)
-- **Contract Address:** [`0x6Ff8A142F4909d5ef59C59b28Ccd1184E95F477A`](https://explorer.somnia.network/address/0x6Ff8A142F4909d5ef59C59b28Ccd1184E95F477A)
+- **Contract Address:** [`0x6Ff8A142F4909d5ef59C59b28Ccd1184E95F477A`](https://shannon-explorer.somnia.network/address/0x6Ff8A142F4909d5ef59C59b28Ccd1184E95F477A)
 
 ## Dive into the Code
 This project is split into two perfectly paired halves. Check out their dedicated readmes for a peek beneath the hood:
